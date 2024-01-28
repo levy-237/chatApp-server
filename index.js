@@ -150,8 +150,8 @@ app.get("/people", async (req, res) => {
 //   await Message.deleteMany({});
 //   res.status(200).json({ msg: "deleted" });
 // });
-
-const server = app.listen(4000, () => {
+const port = process.env.PORT || 4000;
+const server = app.listen(port, () => {
   console.log("LISTENING ON PORT 4000");
 });
 
