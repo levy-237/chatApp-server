@@ -84,11 +84,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.get("/messages", async (req, res) => {
-  const message = await Message.find({});
-  res.json({ message });
-});
-
 app.get("/messages/:id", async (req, res) => {
   try {
     const { text } = req.query;
@@ -123,11 +118,6 @@ app.get("/messages/:id", async (req, res) => {
   }
 });
 
-// app.get("/people", async (req, res) => {
-//   const people = await User.find({});
-//   res.json(people);
-// });
-
 app.get("/people", async (req, res) => {
   try {
     const { username } = req.query;
@@ -145,11 +135,6 @@ app.get("/people", async (req, res) => {
   }
 });
 
-// app.get("/deleteall", async (req, res) => {
-//   await User.deleteMany({});
-//   await Message.deleteMany({});
-//   res.status(200).json({ msg: "deleted" });
-// });
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
   console.log("LISTENING ON PORT 4000");
